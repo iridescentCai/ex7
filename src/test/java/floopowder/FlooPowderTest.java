@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class FlooPowderTest {
 
-    /* the timeout interval per test is 30 seconds */
-    private static int TIMEOUT = 20;
+    /* the timeout interval per test is 60 seconds */
+    private static int TIMEOUT = 60;
 
     @Rule
     public Timeout globalTimeout = Timeout.seconds(TIMEOUT);
@@ -45,7 +45,9 @@ public class FlooPowderTest {
             5,
             5,
             5,
-            9
+            10,
+            6,
+            3
         };
 
         int[] timeSteps = {
@@ -56,7 +58,9 @@ public class FlooPowderTest {
             3,
             3,
             3,
-            4
+            6,
+            6,
+            5
         };
 
         List<Set<Integer>> jumpDistances = Arrays.asList(
@@ -67,7 +71,9 @@ public class FlooPowderTest {
             Set.of(3, 5),
             Set.of(3, 5, 0),
             Set.of(1, 0),
-            Set.of(2, 3, 7)
+            Set.of(1, 2, 8),
+            Set.of(3),
+            Set.of(0, 4)
         );
 
         int[] answers = {
@@ -78,7 +84,9 @@ public class FlooPowderTest {
             30224,
             36704,
             0,
-            522402003,
+            19219180,
+            23567578,
+            512
         };
 
         Object[][] parameters = new Object[gridSize.length][4];
